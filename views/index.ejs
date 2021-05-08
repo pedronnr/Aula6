@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PWFlix</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>PWFlix</h1>
+    <p>Filmes</p>
+
+    <form action="/" method="GET">
+      <input type="text" name="search" />
+      <input type="submit" value="Pesquisar" />
+    </form>
+
+    <ul>
+      
+      <% for(let i=0; i < movies.length; i++) { %>
+          <li><%= movies[i].Title %></li>
+          <a href="/movies/<%= movies[i].imdbID %>">
+            <img src="<%= movies[i].Poster %>" />
+          </a>
+      <% } %>
+    </ul>
+
+  </body>
+</html>
